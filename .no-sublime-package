@@ -1,0 +1,3 @@
+.gitignore
+.pylintrc
+requirements-dev.txt

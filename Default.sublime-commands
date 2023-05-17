@@ -1,0 +1,25 @@
+[
+     { 
+        "caption": "🤖 Nano Bots: Prompt", 
+        "command": "nano_bots", 
+        "args": { "state": "-", "action": "prompt", "mode": "add" }
+    },
+    { 
+        "caption": "🤖 Nano Bots: Apply", 
+        "command": "nano_bots", 
+        "args": {
+            "state": "-", "action": "apply",
+            "mode": "replace", "prefix": "",
+            "format": "[prompt]: [input]" }
+    },
+    { 
+        "caption": "🤖 Nano Bots: Evaluate", 
+        "command": "nano_bots", 
+        "args": { "state": "-", "action": "evaluate", "mode": "replace" }
+    },
+    { 
+        "caption": "🤖 Nano Bots: Stop", 
+        "command": "nano_bots", 
+        "args": { "action": "stop" }
+    }
+]

@@ -114,17 +114,28 @@ https://user-images.githubusercontent.com/113217272/238783555-96b84ab5-47c5-4613
 ```json
 [
     {
-        "keys": ["ctrl+b", "ctrl+b"], 
+        "keys": ["ctrl+b", "ctrl+p"], 
         "command": "nano_bots",
-        "args": { "state": "-", "action": "prompt", "cartridge": "-", "input": "hi" }
+        "args": { "state": "-", "action": "prompt", "mode": "add" }
     },
     {
         "keys": ["ctrl+b", "ctrl+l"], 
         "command": "nano_bots",
-        "args": { "state": "-", "action": "evaluate", "cartridge": "-" }
+        "args": {
+            "state": "-", "action": "apply", "mode": "replace",
+            "prefix": "", "format": "[prompt]: [input]" }
+    },
+    {
+        "keys": ["ctrl+b", "ctrl+b"], 
+        "command": "nano_bots",
+        "args": { "state": "-", "action": "evaluate", "mode": "replace" }
+    },
+    {
+        "keys": ["ctrl+b", "ctrl+k"], 
+        "command": "nano_bots",
+        "args": { "action": "stop" }
     }
 ]
-
 ```
 
 ## Development

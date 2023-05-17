@@ -8,9 +8,8 @@
         "caption": "🤖 Nano Bots: Apply", 
         "command": "nano_bots", 
         "args": {
-            "state": "-", "action": "apply",
-            "mode": "replace", "prefix": "",
-            "format": "[prompt]: [input]" }
+            "state": "-", "action": "apply",  "mode": "replace",
+            "prefix": "", "format": "[prompt]: [input]" }
     },
     { 
         "caption": "🤖 Nano Bots: Evaluate", 

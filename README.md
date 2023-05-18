@@ -53,7 +53,7 @@ Once you have access to the Nano Bots API, you can go to "Preferences" -> "Setti
 
 ## Commands
 
-After installation, you will have the following commands available in the pallet command:
+After installation, you will have the following commands available in the command pallet:
 
 - 🤖 Nano Bots: [Prompt](#prompt)
 - 🤖 Nano Bots: [Apply](#apply)
@@ -138,7 +138,7 @@ provider:
 
 ## Shortcuts
 
-There are no default shortcuts. However, if you would like to have some, we recommend the following ones:
+There are no default shortcuts, but you can add your own by going to "Preferences" and selecting "Key Binding". We recommend the following ones:
 
 ### Suggested Defaults
 

@@ -115,7 +115,7 @@ https://user-images.githubusercontent.com/113217272/238783555-96b84ab5-47c5-4613
 
 ### Default
 
-Your can overrite the default Cartidge by create your own with the name `default.yml`:
+You can override the default cartridge by creating your own with the name `default.yml`:
 
 ```yaml
 ---

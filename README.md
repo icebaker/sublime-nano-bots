@@ -14,6 +14,7 @@ Enhance your productivity and workflow by bringing the power of Artificial Intel
   - [Evaluate](#evaluate)
   - [Stop](#stop)
 - [Cartridges](#cartridges)
+  - [Default](#default)
 - [Shortcuts](#shortcuts)
   - [Suggested Defaults](#suggested-defaults)
   - [Custom Commands](#custom-commands)

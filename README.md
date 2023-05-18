@@ -15,6 +15,9 @@ Enhance your productivity and workflow by bringing the power of Artificial Intel
   - [Stop](#stop)
 - [Cartridges](#cartridges)
 - [Shortcuts](#shortcuts)
+  - [Suggested Defaults](#suggested-defaults)
+  - [Custom Commands](#custom-commands)
+  - [State](#state)
 - [Development](#development)
 
 ## Installation
@@ -109,7 +112,34 @@ For further details on Cartridges, please refer to the [Nano Bots](https://githu
 
 https://user-images.githubusercontent.com/113217272/238783555-96b84ab5-47c5-4613-9484-d3f0b75a34d8.mp4
 
+### Default
+
+Your can overrite the default Cartidge by create your own with the name `default.yml`:
+
+```yaml
+---
+meta:
+  name: Default
+  symbol: 🤖
+  author: Your Name
+  version: 0.0.1
+
+provider:
+  name: openai
+  settings:
+    model: gpt-3.5-turbo
+    credentials:
+      address: ENV/OPENAI_API_ADDRESS
+      access-token: ENV/OPENAI_API_ACCESS_TOKEN
+      user-identifier: ENV/OPENAI_API_USER_IDENTIFIER
+
+```
+
 ## Shortcuts
+
+There are no default shortcuts. However, if you would like to have some, we recommend the following ones:
+
+### Suggested Defaults
 
 ```json
 [
@@ -122,8 +152,9 @@ https://user-images.githubusercontent.com/113217272/238783555-96b84ab5-47c5-4613
         "keys": ["ctrl+b", "ctrl+l"], 
         "command": "nano_bots",
         "args": {
-            "state": "-", "action": "apply", "mode": "replace",
-            "prefix": "", "format": "[prompt]: [input]" }
+            "state": "-", "action": "apply",
+            "mode": "replace", "prefix": "",
+            "format": "[prompt]: [input]" }
     },
     {
         "keys": ["ctrl+b", "ctrl+b"], 
@@ -137,6 +168,101 @@ https://user-images.githubusercontent.com/113217272/238783555-96b84ab5-47c5-4613
     }
 ]
 ```
+
+### Custom Commands
+
+The `action` keyword refers to the [available commands](#commands).
+
+The `mode` refers to how the answer will be delivered when a text is selected. `add` will add the answer after the selected text, while `replace` will replace it with the answer.
+
+When `add` is defined, you may also want to add a `prefix`:
+
+```json
+{
+  "keys": ["ctrl+b", "ctrl+l"], 
+  "command": "nano_bots",
+  "args": {
+      "state": "-", "action": "apply",
+      "mode": "add", "prefix": "\n",
+      "format": "[prompt]: [input]" }
+},
+```
+
+When using the `apply` command, it is possible to customize the prompt by including a `format` keyword:
+
+```text
+Selected Text: How are you doing?
+       Prompt: translate to french
+```
+
+```json
+{
+  "format": "[prompt]: [input]"
+}
+```
+
+Will produce the prompt:
+```text
+translate to french: How are you doing?
+```
+
+If you prefer to skip the prompt for selecting a Cartridge when using those commands, you can define the desired cartridge beforehand:
+
+```json
+{
+    "keys": ["ctrl+b", "ctrl+b"], 
+    "command": "nano_bots",
+    "args": { "state": "-", "action": "evaluate", "mode": "replace", "cartridge": "-" }
+}
+```
+
+The `-` represents the default Cartridge. You can replace it with any other available Cartridge in your system.
+
+If you want to define a straightforward command that does not require any user input or consideration, you can accomplish this by using:
+
+```json
+{
+    "keys": ["ctrl+b", "ctrl+p"], 
+    "command": "nano_bots",
+    "args": { "state": "-", "action": "prompt", "mode": "add", "cartridge": "-", "input": "Hello!" }
+}
+```
+
+If you wish to define a command that applies to your current selection without requiring any additional input, you can use:
+
+```json
+{
+    "keys": ["ctrl+b", "ctrl+p"], 
+    "command": "nano_bots",
+    "args": { "state": "-", "action": "evaluate", "mode": "replace", "cartridge": "-" }
+}
+```
+
+```json
+{
+    "keys": ["ctrl+b", "ctrl+p"], 
+    "command": "nano_bots",
+    "args": {
+      "state": "-", "action": "apply", "mode": "replace",
+      "cartridge": "-", "input": "translate to en-us" }
+}
+```
+
+### State
+
+All interactions with Nano Bots are stateless by default. However, if you wish to preserve the history of interactions, you can use a state key:
+
+```json
+{
+    "keys": ["ctrl+b", "ctrl+p"], 
+    "command": "nano_bots",
+    "args": {
+      "state": "0470dfa445f1f11b5eb9b3089c5943c8",
+      "action": "prompt", "mode": "add" }
+}
+```
+
+Each cartridge will maintain its own isolated state. Please refer to the [specification](https://icebaker.github.io/nano-bots/#/README?id=state) for further information on state management.
 
 ## Development
 

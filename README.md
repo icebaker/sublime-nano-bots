@@ -8,6 +8,7 @@ Enhance your productivity and workflow by bringing the power of Artificial Intel
 
 - [Installation](#installation)
   - [Setup](#setup)
+    - [Local API Instance](#local-api-instance)
 - [Commands](#commands)
   - [Prompt](#prompt)
   - [Apply](#apply)
@@ -39,6 +40,12 @@ git clone \
 ```
 
 ### Setup
+
+By default, access to the public Nano Bots API is available. However, it only provides a default Cartridge and may sometimes be slow or unavailable due to rate limits. This is common when many users around the world intensely use the API simultaneously.
+
+To obtain the best performance and the opportunity to develop and personalize your own Cartridges, it is recommended that you use your own provider credentials to run your instance of the API locally. This approach will provide a superior and customized experience, in contrast to the convenient yet limited experience provided by the public API.
+
+#### Local API Instance
 
 In order to connect your package to the Nano Bots API, you can start a local instance of the API with [nano-bots-api](https://github.com/icebaker/nano-bots-api). It is important to remember that the API still depends on an external provider, which has its own polices about security and privacy.
 

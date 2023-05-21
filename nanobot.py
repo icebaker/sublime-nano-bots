@@ -75,7 +75,7 @@ class NanoBot:
 
         stream_id = response.get('id', '')
         if not stream_id:
-            sublime.error_message('No Stream ID received.');
+            sublime.error_message('No Stream ID received.')
             return
 
         state = ''
@@ -105,14 +105,12 @@ class NanoBot:
         thread_callback=None, thread_event=None, timeout=None
     ):
         try:
-            hostname, port = NanoBot.get_host_port(
-                config['NANO_BOTS_API_ADDRESS'])
-            url = NanoBot.get_url(config['NANO_BOTS_API_ADDRESS'], path)
-            conn = NanoBot.create_connection(hostname, port, timeout)
+            conn = NanoBot.create_connection(
+                config['NANO_BOTS_API_ADDRESS'], timeout)
             headers = NanoBot.create_headers(config)
             json_str = NanoBot.create_json(params)
 
-            conn.request(method, url, json_str, headers)
+            conn.request(method, path, json_str, headers)
             response = NanoBot.get_response(conn)
             conn.close()
 
@@ -140,14 +138,26 @@ class NanoBot:
         return api_address + path
 
     @staticmethod
-    def create_connection(hostname, port, timeout):
+    def create_connection(api_address, timeout):
+        parsed_url = urlsplit(api_address)
+        hostname = parsed_url.hostname
+        port = parsed_url.port
+        scheme = parsed_url.scheme
+        if scheme == "https":
+            if not port:
+                port = 443
+            return http.client.HTTPSConnection(hostname, port, timeout=timeout)
+
+        if not port:
+            port = 80
         return http.client.HTTPConnection(hostname, port, timeout=timeout)
 
     @staticmethod
     def create_headers(config):
         return {
-        'Content-type': 'application/json',
-        'NANO_BOTS_USER_IDENTIFIER': 'sublime-text/' + config['NANO_BOTS_USER_IDENTIFIER']}
+            'Content-type': 'application/json',
+            'NANO_BOTS_USER_IDENTIFIER':
+                'sublime-text/' + config['NANO_BOTS_USER_IDENTIFIER']}
 
     @staticmethod
     def create_json(params):

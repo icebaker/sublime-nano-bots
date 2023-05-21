@@ -75,9 +75,7 @@ class NanoBot:
 
         stream_id = response.get('id', '')
         if not stream_id:
-            callback({
-                'output': 'No Stream ID received.',
-                'fragment': 'No Stream ID received.'})
+            sublime.error_message('No Stream ID received.');
             return
 
         state = ''
@@ -111,7 +109,7 @@ class NanoBot:
                 config['NANO_BOTS_API_ADDRESS'])
             url = NanoBot.get_url(config['NANO_BOTS_API_ADDRESS'], path)
             conn = NanoBot.create_connection(hostname, port, timeout)
-            headers = NanoBot.create_headers()
+            headers = NanoBot.create_headers(config)
             json_str = NanoBot.create_json(params)
 
             conn.request(method, url, json_str, headers)
@@ -146,8 +144,10 @@ class NanoBot:
         return http.client.HTTPConnection(hostname, port, timeout=timeout)
 
     @staticmethod
-    def create_headers():
-        return {'Content-type': 'application/json'}
+    def create_headers(config):
+        return {
+        'Content-type': 'application/json',
+        'NANO_BOTS_USER_IDENTIFIER': config['NANO_BOTS_USER_IDENTIFIER']}
 
     @staticmethod
     def create_json(params):

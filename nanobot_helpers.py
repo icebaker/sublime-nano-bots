@@ -7,7 +7,7 @@ from .sublime_helpers import SublimeHelpers
 class NanoBotHelpers:
     @staticmethod
     def config():
-        settings_keys = ['NANO_BOTS_API_ADDRESS', 'NANO_BOTS_STREAM']
+        settings_keys = ['NANO_BOTS_API_ADDRESS', 'NANO_BOTS_STREAM', 'NANO_BOTS_USER_IDENTIFIER']
 
         def load_settings(source, keys):
             if isinstance(source, dict):

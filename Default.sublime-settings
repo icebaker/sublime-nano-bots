@@ -1,4 +1,5 @@
 {
   "NANO_BOTS_API_ADDRESS": "http://localhost:3048",
-  "NANO_BOTS_STREAM": true
+  "NANO_BOTS_STREAM": true,
+  "NANO_BOTS_USER_IDENTIFIER": "sublime-text/anonymous"
 }

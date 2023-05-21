@@ -47,7 +47,8 @@ Once you have access to the Nano Bots API, you can go to "Preferences" -> "Setti
 ```json
 {
   "NANO_BOTS_API_ADDRESS": "http://localhost:3048",
-  "NANO_BOTS_STREAM": true
+  "NANO_BOTS_STREAM": true,
+  "NANO_BOTS_USER_IDENTIFIER": "sublime-text/your-name"
 }
 ```
 
@@ -233,7 +234,7 @@ If you wish to define a command that applies to your current selection without r
 
 ```json
 {
-    "keys": ["ctrl+b", "ctrl+p"], 
+    "keys": ["ctrl+b", "ctrl+b"], 
     "command": "nano_bots",
     "args": { "state": "-", "action": "evaluate", "mode": "replace", "cartridge": "-" }
 }
@@ -241,7 +242,7 @@ If you wish to define a command that applies to your current selection without r
 
 ```json
 {
-    "keys": ["ctrl+b", "ctrl+p"], 
+    "keys": ["ctrl+b", "ctrl+l"], 
     "command": "nano_bots",
     "args": {
       "state": "-", "action": "apply", "mode": "replace",

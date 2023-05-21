@@ -44,7 +44,7 @@ In order to connect your package to the Nano Bots API, you can start a local ins
 
 Once you have access to the Nano Bots API, you can go to "Preferences" -> "Settings" and add the following configuration:
 
-```json
+```javascript
 {
   "NANO_BOTS_API_ADDRESS": "http://localhost:3048",
   "NANO_BOTS_STREAM": true,

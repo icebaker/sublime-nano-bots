@@ -48,7 +48,7 @@ Once you have access to the Nano Bots API, you can go to "Preferences" -> "Setti
 {
   "NANO_BOTS_API_ADDRESS": "http://localhost:3048",
   "NANO_BOTS_STREAM": true,
-  "NANO_BOTS_USER_IDENTIFIER": "sublime-text/your-name"
+  "NANO_BOTS_USER_IDENTIFIER": "anonymous" // your-name
 }
 ```
 

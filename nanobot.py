@@ -147,7 +147,7 @@ class NanoBot:
     def create_headers(config):
         return {
         'Content-type': 'application/json',
-        'NANO_BOTS_USER_IDENTIFIER': config['NANO_BOTS_USER_IDENTIFIER']}
+        'NANO_BOTS_USER_IDENTIFIER': 'sublime-text/' + config['NANO_BOTS_USER_IDENTIFIER']}
 
     @staticmethod
     def create_json(params):

@@ -117,7 +117,7 @@ To interrupt a streaming response or stop waiting for a complete response, you c
 
 When executing any of the commands mentioned earlier, a prompt will appear asking you to select a Cartridge. The default Cartridge is the standard chat interaction. However, you can create your own Cartridges which will automatically appear in the command palette.
 
-For further details on Cartridges, please refer to the [Nano Bots](https://github.com/icebaker/nano-bots) specification. You can find it [here](https://icebaker.github.io/nano-bots/#/README?id=cartridges).
+For further details on Cartridges, please refer to the [Nano Bots](https://github.com/icebaker/nano-bots) specification. You can find it [here](https://spec.nbots.io/#/README?id=cartridges).
 
 https://user-images.githubusercontent.com/113217272/238783555-96b84ab5-47c5-4613-9484-d3f0b75a34d8.mp4
 
@@ -271,7 +271,7 @@ All interactions with Nano Bots are stateless by default. However, if you wish t
 }
 ```
 
-Each cartridge will maintain its own isolated state. Please refer to the [specification](https://icebaker.github.io/nano-bots/#/README?id=state) for further information on state management.
+Each cartridge will maintain its own isolated state. Please refer to the [specification](https://spec.nbots.io/#/README?id=state) for further information on state management.
 
 ## Development
 

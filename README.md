@@ -124,7 +124,7 @@ https://user-images.githubusercontent.com/113217272/238783555-96b84ab5-47c5-4613
 
 ### Marketplace
 
-You can explore the Nano Bots Marketplace (https://nbots.io) to discover new cartridges that can help you.
+You can explore the Nano Bots [Marketplace](https://nbots.io) to discover new cartridges that can help you.
 
 ### Default
 

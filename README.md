@@ -15,6 +15,7 @@ Enhance your productivity and workflow by bringing the power of Artificial Intel
   - [Evaluate](#evaluate)
   - [Stop](#stop)
 - [Cartridges](#cartridges)
+  - [Marketplace](#marketplace)
   - [Default](#default)
 - [Shortcuts](#shortcuts)
   - [Suggested Defaults](#suggested-defaults)
@@ -120,6 +121,10 @@ When executing any of the commands mentioned earlier, a prompt will appear askin
 For further details on Cartridges, please refer to the [Nano Bots](https://github.com/icebaker/nano-bots) specification. You can find it [here](https://spec.nbots.io/#/README?id=cartridges).
 
 https://user-images.githubusercontent.com/113217272/238783555-96b84ab5-47c5-4613-9484-d3f0b75a34d8.mp4
+
+### Marketplace
+
+You can explore the Nano Bots Marketplace (https://nbots.io) to discover new cartridges that can help you.
 
 ### Default
 

@@ -102,7 +102,8 @@ class NanoBot:
     @staticmethod
     def send_request(
         config, params, method, path,
-        thread_callback=None, thread_event=None, timeout=None
+        thread_callback=None, thread_event=None, timeout=None,
+        retries=0
     ):
         try:
             conn = NanoBot.create_connection(
@@ -120,6 +121,12 @@ class NanoBot:
 
             return response
         except Exception as error:
+            if retries < 2:
+                return NanoBot.send_request(
+                    config, params, method, path,
+                    thread_callback, thread_event,
+                    timeout, retries+1)
+
             sublime.error_message(
                 'Error: {} - {}'.format(
                     config['NANO_BOTS_API_ADDRESS'], str(error)))

@@ -79,12 +79,14 @@ class NanoBotsDispatcher:
 
             NanoBotsDispatcher.run(environment, params, counter + 1)
 
-        options = NanoBotHelpers.cartridges_as_menu()
-        environment['command'].view.window().show_quick_panel(
-            list(map(lambda option: option[0], options)),
-            lambda index:
-            on_done(options, index)
-        )
+        def open(options):
+            environment['command'].view.window().show_quick_panel(
+                list(map(lambda option: option[0], options)),
+                lambda index:
+                on_done(options, index)
+            )
+
+        NanoBotHelpers.cartridges_as_menu(open)
 
     @staticmethod
     def ask_for_input(environment, params, counter):

@@ -1,3 +1,4 @@
+import threading
 import sublime
 
 from .nanobot import NanoBot
@@ -39,20 +40,23 @@ class NanoBotHelpers:
         NanoBot.stop()
 
     @staticmethod
-    def cartridges_as_menu():
-        cartridges = NanoBotHelpers.cartridges()
+    def cartridges_as_menu(callback):
+        def fetch(callback):
+            cartridges = NanoBotHelpers.cartridges()
 
-        items = []
+            items = []
 
-        for cartridge in cartridges:
-            if cartridge['meta']['symbol']:
-                items.append(
-                    (cartridge['meta']['symbol'] + ' ' +
-                     cartridge['meta']['name'], cartridge))
-            else:
-                items.append(cartridge['meta']['name'])
+            for cartridge in cartridges:
+                if cartridge['meta']['symbol']:
+                    items.append(
+                        (cartridge['meta']['symbol'] + ' ' +
+                         cartridge['meta']['name'], cartridge))
+                else:
+                    items.append(cartridge['meta']['name'])
 
-        return items
+            callback(items)
+
+        threading.Thread(target=fetch, args=(callback,)).start()
 
     @staticmethod
     def cartridges():

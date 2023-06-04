@@ -1,5 +1,5 @@
 {
   "NANO_BOTS_API_ADDRESS": "https://api.nbots.io",
   "NANO_BOTS_STREAM": true,
-  "NANO_BOTS_USER_IDENTIFIER": "anonymous"
+  "NANO_BOTS_END_USER": "anonymous"
 }

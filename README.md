@@ -21,6 +21,15 @@ Enhance your productivity and workflow by bringing the power of Artificial Intel
   - [Suggested Defaults](#suggested-defaults)
   - [Custom Commands](#custom-commands)
   - [State](#state)
+- [Privacy and Security: Frequently Asked Questions](#privacy-and-security-frequently-asked-questions)
+  - [Will my files/code/content be shared or uploaded to third-party services?](#will-my-filescodecontent-be-shared-or-uploaded-to-third-party-services)
+  - [What information may be shared with third-party AI providers?](#what-information-may-be-shared-with-third-party-ai-providers)
+  - [Who are these third parties?](#who-are-these-third-parties)
+  - [Is there an option to avoid sharing any information?](#is-there-an-option-to-avoid-sharing-any-information)
+  - [Can I use this for private or confidential content/code?](#can-i-use-this-for-private-or-confidential-contentcode)
+  - [Do I need to pay to use this?](#do-i-need-to-pay-to-use-this)
+  - [Is this project affiliated with OpenAI?](#is-this-project-affiliated-with-openai)
+  - [Warranty and Disclaimer](#warranty-and-disclaimer)
 - [Development](#development)
 
 ## Installation
@@ -278,6 +287,44 @@ All interactions with Nano Bots are stateless by default. However, if you wish t
 ```
 
 Each cartridge will maintain its own isolated state. Please refer to the [specification](https://spec.nbots.io/#/README?id=state) for further information on state management.
+
+## Privacy and Security: Frequently Asked Questions
+
+### Will my files/code/content be shared or uploaded to third-party services?
+
+Absolutely not, unless you intentionally take action to do so. The files you're working on or have open in your editor will never be uploaded or shared without your explicit action.
+
+### What information may be shared with third-party AI providers?
+
+Only small fragments of text/code that you intentionally take action to share. The text you input while using the [Prompt](#prompt) command is shared with the [Nano Bots Public API](https://api.nbots.io), which also needs to share it with the [OpenAI API](https://platform.openai.com/docs/api-reference) strictly for generating a response. If you use [Evaluate](#evaluate) or [Apply](#apply), the specific text you select will also be shared to produce a response.
+
+### Who are these third parties?
+
+The data you deliberately choose to share will be transmitted securely (HTTPS) to the [Nano Bots Public API](https://api.nbots.io). This public API is open source and available for auditing [here](https://github.com/icebaker/nano-bots-api). It employs [OpenAI API](https://platform.openai.com/docs/api-reference) for data processing. As a result, any data you opt to share will also be sent to OpenAI API, which according to [their policies](https://openai.com/policies/api-data-usage-policies), is not used for model training and is not retained beyond a 30-day period.
+
+### Is there an option to avoid sharing any information?
+
+Sharing fragments of data is necessary to generate outputs. You have the option to use your own [local instance](#local-api-instance) of the [Nano Bots API](https://github.com/icebaker/nano-bots-api). This setup ensures all interactions occur locally on your machine, with the only data shared being with your personal [OpenAI API](https://platform.openai.com). Alternatively, you can decide not to use OpenAI as well, and instead, connect the local Nano Bots API to your own local LLM, such as [FastChat](https://github.com/lm-sys/FastChat), enabling a completely local and private interaction.
+
+### Can I use this for private or confidential content/code?
+
+For private or confidential content/code, we recommend that you or your organization conduct a thorough security and privacy assessment. Based on this, you may decide that the [Nano Bots Public API](https://github.com/icebaker/nano-bots-api) and [OpenAI's privacy policies](https://openai.com/policies/api-data-usage-policies) are sufficient, or you may choose to use your own [private setup](#local-api-instance) for the API and LLM provider.
+
+### Do I need to pay to use this?
+
+No. If you're using the default [Nano Bots Public API](https://api.nbots.io), there's no cost involved, but you might encounter occasional rate limiting or stability issues. If you decide to use your own API and LLM provider, any associated costs will depend on your chosen provider. For instance, using the Nano Bots API locally with OpenAI will require a paid [OpenAI Platform Account](https://platform.openai.com).
+
+### Is this project affiliated with OpenAI?
+
+No, this is an open-source project with no formal affiliations with OpenAI. It's designed for compatibility with various LLM providers, with OpenAI being the default one. As OpenAI is a private company, we can't provide any assurances about their services, and we have no affiliations whatsoever. Use at your own risk.
+
+### Warranty and Disclaimer
+
+This project follows the [MIT license](https://opensource.org/license/mit/). In plain language, it means:
+
+> The software is provided as it is. This means there's no guarantee or warranty for it. This includes how well it works (if it works as you expect), if it's fit for your purpose, and that it won't harm anything (non-infringement). The people who made or own this software can't be held responsible if something goes wrong because of the software, whether you're using it, changing it, or anything else you're doing with it.
+
+In other words, there's no promise or responsibility from us about what happens when you use it. So, it's important that you use it at your own risk and decide how much you trust it. You are the one in charge and responsible for how you use it and the possible consequences of its usage.
 
 ## Development
 

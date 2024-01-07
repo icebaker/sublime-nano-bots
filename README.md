@@ -57,7 +57,7 @@ To obtain the best performance and the opportunity to develop and personalize yo
 
 #### Local API Instance
 
-In order to connect your package to the Nano Bots API, you can start a local instance of the API with [nano-bots-api](https://github.com/icebaker/nano-bots-api). It is important to remember that the API still depends on an external provider, which has its own polices about security and privacy.
+To connect your package to your own local Nano Bots API, start a local instance using [nano-bots-api](https://github.com/icebaker/nano-bots-api). Please note that the local API still relies on external providers, which has its own policies regarding security and privacy. However, if you choose to use [Ollama](https://ollama.ai) with open source Models, you can ensure that everything is kept local and remains completely private.
 
 Once you have access to the Nano Bots API, you can go to "Preferences" -> "Settings" and add the following configuration:
 

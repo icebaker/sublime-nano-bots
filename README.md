@@ -1,6 +1,6 @@
 # Nano Bots for Sublime Text
 
-[**Nano Bots**](https://github.com/icebaker/nano-bots): small, AI-powered bots easily shared as a single file, designed to support multiple providers such as Vicuna, OpenAI ChatGPT, Google PaLM, Alpaca, and LLaMA.
+[Nano Bots](https://spec.nbots.io): AI-powered bots that can be easily shared as a single file, designed to support multiple providers such as [Cohere Command](https://cohere.com), [Google Gemini](https://deepmind.google/technologies/gemini), [Maritaca AI MariTalk](https://www.maritaca.ai), [Mistral AI](https://mistral.ai), [Ollama](https://ollama.ai), [OpenAI ChatGPT](https://openai.com/chatgpt), and others, with support for calling tools (functions).
 
 Enhance your productivity and workflow by bringing the power of Artificial Intelligence to your code editor!
 

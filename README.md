@@ -4,7 +4,7 @@
 
 Enhance your productivity and workflow by bringing the power of Artificial Intelligence to your code editor!
 
-![Nano Bots](https://raw.githubusercontent.com/icebaker/assets/main/sublime-nano-bots/cover.png)
+![Nano Bots](https://raw.githubusercontent.com/icebaker/assets/main/sublime-nano-bots/cover-b.png)
 
 - [Installation](#installation)
   - [Setup](#setup)
